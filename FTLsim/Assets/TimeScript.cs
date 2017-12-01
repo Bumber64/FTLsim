@@ -12,14 +12,14 @@ public class TimeScript : MonoBehaviour
 	public GameObject photon_prefab;
 
 	void step_forward()
-	{	if (current_time <= 50)
-		{	update_photons(1);
-			spawn_photon(true);
+	{	update_photons(1);
+		if (current_time <= 50)
+		{	spawn_photon(true);
 			spawn_photon(false);
-			move_ship(1);
-			current_time++;
-			time_indicator.text = "T = "+current_time.ToString();
 		}
+		move_ship(1);
+		current_time++;
+		time_indicator.text = "T = "+current_time.ToString();
 	}
 
 	void step_backward()
